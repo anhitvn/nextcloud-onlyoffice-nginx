@@ -1,0 +1,1 @@
+Link setup goc: https://github.com/ONLYOFFICE/docker-onlyoffice-nextcloud
