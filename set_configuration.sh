@@ -2,7 +2,7 @@
 
 set -x
 
-docker exec -u www-data app-server php occ --no-warnings config:system:get drive.nexlesoft.com >> trusted_domain.tmp
+docker exec -u www-data app-server php occ --no-warnings config:system:get [drive.mydomain.com] >> trusted_domain.tmp
 
 if ! grep -q "nginx-server" trusted_domain.tmp; then
     TRUSTED_INDEX=$(cat trusted_domain.tmp | wc -l);
