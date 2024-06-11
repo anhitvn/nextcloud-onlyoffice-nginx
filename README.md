@@ -118,3 +118,8 @@ Có điều, có thể bạn phải set quyền www-data cho file này.
 ```
 chown www-data:www-data /nexcloud-data/drive.apps/app_data/cron.php
 ```
+## Redis test
+Run: `docker exec -it redis redis-cli`
+```
+auth 'redisPassword'
+```
