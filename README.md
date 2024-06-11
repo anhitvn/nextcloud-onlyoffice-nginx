@@ -123,3 +123,4 @@ Run: `docker exec -it redis redis-cli`
 ```
 auth 'redisPassword'
 ```
+Link support: https://docs.nextcloud.com/server/29/admin_manual/configuration_server/caching_configuration.html
