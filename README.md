@@ -17,7 +17,6 @@ Documents clone from https://github.com/ONLYOFFICE/docker-onlyoffice-nextcloud a
     ```
     docker-compose up -d
     ```
-
     **Please note**: you might need to wait a couple of minutes when all the containers are up and running after the above command.
 
 3. Now launch the browser and enter the webserver address. The Nextcloud wizard webpage will be opened. Enter all the necessary data to complete the wizard.
@@ -108,17 +107,14 @@ The table below will help you make the right choice.
 
 \** Support for all conditions and gradient. Adding/Editing capabilities are coming soon
 
-## Project Information
+## Bổ sung support lỗi cho NextCloud sau khi config:
 
-Official website: [https://www.onlyoffice.com/](https://www.onlyoffice.com/?utm_source=github&utm_medium=cpc&utm_campaign=GitHubDockerNC)
-
-Code repository: [https://github.com/ONLYOFFICE/docker-onlyoffice-nextcloud](https://github.com/ONLYOFFICE/docker-onlyoffice-nextcloud "https://github.com/ONLYOFFICE/docker-onlyoffice-nextcloud")
-
-
-## User Feedback and Support
-
-If you have any problems with or questions about [ONLYOFFICE Document Server][2], please visit our official forum to find answers to your questions: [forum.onlyoffice.com][1] or you can ask and answer ONLYOFFICE development questions on [Stack Overflow][3].
-
-[1]: https://forum.onlyoffice.com
-[2]: https://github.com/ONLYOFFICE/DocumentServer
-[3]: http://stackoverflow.com/questions/tagged/onlyoffice
+Dùng crontab run cron.php mỗi 5 phút
+Từ host docker run
+```
+*/4 * * * * docker exec -u www-data nexcloud-server php cron.php
+```
+Có điều, có thể bạn phải set quyền www-data cho file này.
+```
+chown www-data:www-data /nexcloud-data/drive.apps/app_data/cron.php
+```
